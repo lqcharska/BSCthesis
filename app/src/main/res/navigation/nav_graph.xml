@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/get_started_destination">
+    <fragment
+        android:id="@+id/get_started_destination"
+        android:name="com.example.bscthesis.get_started.GetStartedFragment"
+        android:label="get_started_fragment"
+        tools:layout="@layout/get_started_fragment">
+        <action
+            android:id="@+id/action_get_started_to_login"
+            app:destination="@id/login_destination" />
+        <action
+            android:id="@+id/action_get_started_to_registration"
+            app:destination="@id/registration_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_destination"
+        android:name="com.example.bscthesis.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment"/>
+    <fragment
+        android:id="@+id/registration_destination"
+        android:name="com.example.bscthesis.registration.RegistrationFragment"
+        android:label="registration_fragment"
+        tools:layout="@layout/registration_fragment">
+        <action
+            android:id="@+id/registration_destination_to_describe_your_dog"
+            app:destination="@id/describe_your_dog_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/describe_your_dog_destination"
+        android:name="com.example.bscthesis.describe_your_dog.DescribeYourDogFragment"
+        android:label="describe_your_dog_fragment"
+        tools:layout="@layout/describe_your_dog_fragment"/>
+
+</navigation>

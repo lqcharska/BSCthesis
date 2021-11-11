@@ -1,0 +1,65 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/get_started_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".get_started.GetStartedFragment">
+
+
+        <ImageView
+            android:id="@+id/welcome_dogs_image"
+            android:layout_width="382dp"
+            android:layout_height="271dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.073"
+            app:srcCompat="@drawable/welcome_dogs" />
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="284dp"
+            android:layout_height="62dp"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:text="@string/welcome_text"
+            android:textColor="@color/pink"
+            android:textSize="24sp"
+            android:typeface="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_dogs_image"
+            app:layout_constraintVertical_bias="0.042" />
+
+        <Button
+            android:id="@+id/get_started_register_button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:theme="@style/RegisterButton"
+            app:layout_constraintBottom_toTopOf="@+id/get_started_login_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/get_started_login_button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:theme="@style/LoginButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
