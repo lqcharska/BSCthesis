@@ -20,20 +20,46 @@
         android:id="@+id/login_destination"
         android:name="com.example.bscthesis.login.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment"/>
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_login_to_main"
+            app:destination="@id/main_destination" />
+    </fragment>
     <fragment
         android:id="@+id/registration_destination"
         android:name="com.example.bscthesis.registration.RegistrationFragment"
         android:label="registration_fragment"
         tools:layout="@layout/registration_fragment">
         <action
-            android:id="@+id/registration_destination_to_describe_your_dog"
+            android:id="@+id/action_registration_to_describe_your_dog"
             app:destination="@id/describe_your_dog_destination" />
     </fragment>
     <fragment
         android:id="@+id/describe_your_dog_destination"
         android:name="com.example.bscthesis.describe_your_dog.DescribeYourDogFragment"
         android:label="describe_your_dog_fragment"
-        tools:layout="@layout/describe_your_dog_fragment"/>
+        tools:layout="@layout/describe_your_dog_fragment">
+        <action
+            android:id="@+id/action_describe_your_dog_to_main"
+            app:destination="@id/main_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/main_destination"
+        android:name="com.example.bscthesis.login.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_main_to_match_me"
+            app:destination="@id/match_me_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/match_me_destination"
+        android:name="com.example.bscthesis.match_me.MatchMeFragment"
+        android:label="match_me_fragment"
+        tools:layout="@layout/match_me_fragment">
+        <action
+            android:id="@+id/action_match_me_to_main"
+            app:destination="@id/main_destination" />
+    </fragment>
 
 </navigation>

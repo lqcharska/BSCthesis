@@ -1,4 +1,4 @@
-package com.example.bscthesis.registration
+package com.example.bscthesis.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.bscthesis.R
-import com.example.bscthesis.databinding.LoginFragmentBinding
-import com.example.bscthesis.databinding.RegistrationFragmentBinding
-import com.example.bscthesis.get_started.GetStartedFragmentDirections
+import com.example.bscthesis.databinding.MainFragmentBinding
+import com.example.bscthesis.registration.RegistrationFragmentDirections
 
-class RegistrationFragment : Fragment() {
-    private lateinit var binding: RegistrationFragmentBinding
+
+class MainFragment : Fragment() {
+
+    private lateinit var binding: MainFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,14 +24,14 @@ class RegistrationFragment : Fragment() {
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.registration_fragment,
+            R.layout.main_fragment,
             container,
             false
         )
 
-        binding.registrationNextButton.setOnClickListener {
+        binding.mainMatchMeButton.setOnClickListener {
             findNavController().navigate(
-               RegistrationFragmentDirections.actionRegistrationToDescribeYourDog()
+                MainFragmentDirections.actionMainToMatchMe()
             )
         }
 
