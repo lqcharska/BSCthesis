@@ -51,6 +51,9 @@
         <action
             android:id="@+id/action_main_to_match_me"
             app:destination="@id/match_me_destination" />
+        <action
+            android:id="@+id/action_main_to_my_matches"
+            app:destination="@id/my_matches_destination" />
     </fragment>
     <fragment
         android:id="@+id/match_me_destination"
@@ -60,6 +63,23 @@
         <action
             android:id="@+id/action_match_me_to_main"
             app:destination="@id/main_destination" />
+        <action
+            android:id="@+id/action_match_me_to_match_profile"
+            app:destination="@id/match_profile_destination" />
     </fragment>
+    <fragment
+        android:id="@+id/match_profile_destination"
+        android:name="com.example.bscthesis.match_profile.MatchProfileFragment"
+        android:label="match_profile_fragment"
+        tools:layout="@layout/match_profile_fragment">
+        <action
+            android:id="@+id/action_match_profile_to_match_me"
+            app:destination="@id/match_me_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/my_matches_destination"
+        android:name="com.example.bscthesis.my_matches.MyMatchesFragment"
+        android:label="my_matches_fragment"
+        tools:layout="@layout/my_matches_fragment"/>
 
 </navigation>

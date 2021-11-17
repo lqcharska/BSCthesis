@@ -6,18 +6,19 @@
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".match_me_fragment.MatchMeFragment">
+        tools:context=".my_matches_fragment.MyMatchesFragment">
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_constrainedHeight="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constrainedHeight="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:layout_constraintVertical_bias="0.081"
             tools:listitem="@layout/dogs_list" />
 
         <com.google.android.material.appbar.AppBarLayout
@@ -33,7 +34,7 @@
                 android:layout_height="match_parent">
 
                 <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/match_me_toolbar"
+                    android:id="@+id/my_matches_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/pink"
@@ -49,33 +50,33 @@
                     app:titleTextColor="@color/broken_white"/>
 
                 <ImageButton
-                    android:id="@+id/match_me_return_button"
+                    android:id="@+id/my_matches_return_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/match_me_toolbar"
+                    app:layout_constraintEnd_toEndOf="@+id/my_matches_toolbar"
                     app:layout_constraintHorizontal_bias="0.016"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/return_arrow" />
 
                 <TextView
-                    android:id="@+id/match_me_text"
+                    android:id="@+id/my_matches_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/lato_regular"
-                    android:text="@string/match_me"
+                    android:text="@string/my_matches"
                     android:textAllCaps="true"
                     android:textColor="@color/broken_white"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/match_me_toolbar"
+                    app:layout_constraintEnd_toEndOf="@+id/my_matches_toolbar"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/match_me_return_button"
+                    app:layout_constraintStart_toEndOf="@+id/my_matches_return_button"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.515" />
 

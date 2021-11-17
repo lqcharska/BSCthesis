@@ -35,6 +35,12 @@ class MainFragment : Fragment() {
             )
         }
 
+        binding.mainMyMatchesButton.setOnClickListener {
+            findNavController().navigate(
+                MainFragmentDirections.actionMainToMyMatches()
+            )
+        }
+
         return binding.root
     }
 }

@@ -1,4 +1,4 @@
-package com.example.bscthesis.match_me
+package com.example.bscthesis.my_matches
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.bscthesis.R
-import com.example.bscthesis.databinding.MatchMeFragmentBinding
-import com.example.bscthesis.login.LoginFragmentDirections
+import com.example.bscthesis.databinding.MyMatchesFragmentBinding
+import com.example.bscthesis.match_profile.MatchProfileFragmentDirections
 
+class MyMatchesFragment: Fragment() {
 
-class MatchMeFragment : Fragment() {
-
-    private lateinit var binding: MatchMeFragmentBinding
+    private lateinit var binding: MyMatchesFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,17 +23,16 @@ class MatchMeFragment : Fragment() {
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.match_me_fragment,
+            R.layout.my_matches_fragment,
             container,
             false
         )
 
-        binding.matchMeReturnButton.setOnClickListener {
+        binding.myMatchesReturnButton.setOnClickListener {
             findNavController().navigate(
-                MatchMeFragmentDirections.actionMatchMeToMain()
+                MatchProfileFragmentDirections.actionMatchProfileToMatchMe()
             )
         }
-
 
         return binding.root
     }
