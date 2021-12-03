@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "442369474548",
+    "project_id": "bscthesis-67c05",
+    "storage_bucket": "bscthesis-67c05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442369474548:android:7bd9d54ed341a2d53b03a1",
+        "android_client_info": {
+          "package_name": "com.example.bscthesis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442369474548-bqam1j92vjtgdjrh2ib6ejcaj14fid6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANSHm9qKz1GeA_XiHndOEsmcxKPZBKC9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442369474548-bqam1j92vjtgdjrh2ib6ejcaj14fid6s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

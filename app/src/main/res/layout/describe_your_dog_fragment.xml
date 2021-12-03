@@ -56,7 +56,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/describe_your_dog_bread_field"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -71,6 +71,8 @@
             app:hintEnabled="true"
             app:hintTextColor="@color/pink"
 
+            app:startIconDrawable="@drawable/bread"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -78,18 +80,19 @@
             app:layout_constraintTop_toBottomOf="@+id/describe_your_dog_add_photo"
             app:layout_constraintVertical_bias="0.0">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/describe_your_dog_bread_text_input"
+            <AutoCompleteTextView
+                android:id="@+id/bread_auto_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/bread"
-                android:textColor="@color/broken_black" />
+                android:textColor="@color/broken_black"
+                android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/describe_your_dog_sex_field"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -111,18 +114,19 @@
             app:layout_constraintTop_toBottomOf="@+id/describe_your_dog_bread_field"
             app:layout_constraintVertical_bias="0.0">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/describe_your_dog_sex_text_input"
+            <AutoCompleteTextView
+                android:id="@+id/sex_auto_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/sex"
-                android:textColor="@color/broken_black" />
+                android:textColor="@color/broken_black"
+                android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/describe_your_dog_age_field"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -144,18 +148,19 @@
             app:layout_constraintTop_toBottomOf="@+id/describe_your_dog_bread_field"
             app:layout_constraintVertical_bias="0.0">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/describe_your_dog_text_input"
+            <AutoCompleteTextView
+                android:id="@+id/age_auto_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/age"
-                android:textColor="@color/broken_black" />
+                android:textColor="@color/broken_black"
+                android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/describe_your_dog_size_field"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
@@ -175,18 +180,19 @@
             app:layout_constraintTop_toBottomOf="@+id/describe_your_dog_sex_field"
             app:layout_constraintVertical_bias="0.0">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/describe_your_dog_size_text_input"
+            <AutoCompleteTextView
+                android:id="@+id/size_auto_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/size"
-                android:textColor="@color/broken_black" />
+                android:textColor="@color/broken_black"
+                android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/describe_your_nod_neutered_field"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -207,18 +213,19 @@
             app:layout_constraintTop_toBottomOf="@+id/describe_your_dog_age_field"
             app:layout_constraintVertical_bias="0.0">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/describe_your_nod_neutered_text_input"
+            <AutoCompleteTextView
+                android:id="@+id/neutered_auto_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/neutered"
-                android:textColor="@color/broken_black" />
+                android:textColor="@color/broken_black"
+                android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/describe_your_nod_not_like_field"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -239,18 +246,19 @@
             app:layout_constraintTop_toBottomOf="@+id/describe_your_dog_size_field"
             app:layout_constraintVertical_bias="0.0">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/describe_your_nod_not_like_text_input"
+            <AutoCompleteTextView
+                android:id="@+id/not_like_auto_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/not_like"
-                android:textColor="@color/broken_black" />
+                android:textColor="@color/broken_black"
+                android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/describe_your_dog_be_here_for_field"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -271,13 +279,14 @@
             app:layout_constraintTop_toBottomOf="@+id/describe_your_nod_not_like_field"
             app:layout_constraintVertical_bias="0.0">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/describe_your_dog_be_here_for_text_input"
+            <AutoCompleteTextView
+                android:id="@+id/be_here_for_auto_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/be_here"
-                android:textColor="@color/broken_black" />
+                android:textColor="@color/broken_black"
+                android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

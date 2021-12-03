@@ -26,6 +26,58 @@
     <string name="message">Message</string>
     <string name="enter_mess">Enter HauHau</string>
 
+    <string-array name="breads">
+        <item>Mixed</item>
+        <item>Labrador Retriever</item>
+        <item>French Bulldog</item>
+        <item>German Shepherd</item>
+        <item>Golden Retriever</item>
+        <item>Australian Shepherd</item>
+        <item>Beagle</item>
+        <item>Siberian Husky</item>
+        <item>Pembroke Welsh Corgis</item>
+        <item>Pug</item>
+        <item>Border Collie</item>
+        <item>Shiba Inu</item>
+        <item>Akita Inu</item>
+    </string-array>
+
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="size">
+        <item>Smale</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <string-array name="neutered">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="not_like">
+        <item>Female</item>
+        <item>Male</item>
+        <item>Both</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="be_here_for">
+        <item>Get help</item>
+        <item>Bring help</item>
+        <item>Fun</item>
+    </string-array>
+
+    <string-array name="age">
+        <item>Puppy</item>
+        <item>Young</item>
+        <item>Middle</item>
+        <item>Old</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
