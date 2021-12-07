@@ -10,14 +10,12 @@
 
         <ImageView
             android:id="@+id/message_profile_image_area"
-            android:layout_width="392dp"
+            android:layout_width="290dp"
             android:layout_height="190dp"
-            android:layout_marginStart="4dp"
-            android:background="#F2F2F2"
+            android:layout_marginTop="20dp"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
             app:layout_constraintVertical_bias="0.0"
@@ -94,25 +92,11 @@
             android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.107"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dog_name_text"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.002"
             app:srcCompat="@drawable/bread" />
-
-        <ImageView
-            android:id="@+id/match_profile_sex_image"
-            android:layout_width="65dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_bread_image"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/sex_choose" />
 
         <ImageView
             android:id="@+id/match_profile_age_image"
@@ -122,7 +106,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.107"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_sex_image"
             app:layout_constraintVertical_bias="0.0"
@@ -136,7 +120,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.107"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_age_image"
             app:layout_constraintVertical_bias="0.0"
@@ -150,7 +134,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.107"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_dog_size_image"
             app:layout_constraintVertical_bias="0.0"
@@ -164,7 +148,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.107"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_neutered_image"
             app:layout_constraintVertical_bias="0.0"
@@ -178,7 +162,7 @@
             android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.107"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_not_like_image"
             app:layout_constraintVertical_bias="0.0"
@@ -209,13 +193,13 @@
             android:text="@string/bread"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/match_profile_bread_image"
             app:layout_constraintTop_toBottomOf="@+id/dog_name_text"
-            app:layout_constraintVertical_bias="0.058" />
+            app:layout_constraintVertical_bias="0.06" />
 
         <TextView
             android:id="@+id/match_profile_sex_text"
@@ -227,13 +211,13 @@
             android:text="@string/sex"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/match_profile_sex_image"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_bread_text"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.002" />
 
         <TextView
             android:id="@+id/match_profile_age_text"
@@ -245,13 +229,13 @@
             android:text="@string/age"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/match_profile_age_image"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_sex_text"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.01" />
 
         <TextView
             android:id="@+id/match_profile_size_text"
@@ -263,13 +247,13 @@
             android:text="@string/size"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/match_profile_dog_size_image"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_age_text"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.004" />
 
         <TextView
             android:id="@+id/match_profile_neutered_text"
@@ -281,13 +265,13 @@
             android:text="@string/neutered"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/match_profile_neutered_image"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_size_text"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.019" />
 
         <TextView
             android:id="@+id/match_profilenot_like_text"
@@ -299,13 +283,13 @@
             android:text="@string/not_like"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/match_profile_not_like_image"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_neutered_text"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.006" />
 
         <TextView
             android:id="@+id/match_profile_be_here_text"
@@ -317,26 +301,18 @@
             android:text="@string/be_here"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/match_profiloe_be_here_for_image"
             app:layout_constraintTop_toBottomOf="@+id/match_profilenot_like_text"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="210dp" />
+            app:layout_constraintVertical_bias="0.027" />
 
         <TextView
             android:id="@+id/bread_text_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:fontFamily="@font/lato_regular"
             android:text="Mixed"
             android:textAllCaps="false"
@@ -344,10 +320,10 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.186"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/dog_name_text"
-            app:layout_constraintVertical_bias="0.058" />
+            app:layout_constraintVertical_bias="0.061" />
 
         <TextView
             android:id="@+id/sex_text_input"
@@ -361,10 +337,10 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.151"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/bread_text_input"
-            app:layout_constraintVertical_bias="0.087" />
+            app:layout_constraintVertical_bias="0.089" />
 
         <TextView
             android:id="@+id/age_text_input"
@@ -377,10 +353,10 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.151"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/sex_text_input"
-            app:layout_constraintVertical_bias="0.093" />
+            app:layout_constraintVertical_bias="0.102" />
 
         <TextView
             android:id="@+id/size_text_input"
@@ -393,42 +369,10 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.17"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/age_text_input"
-            app:layout_constraintVertical_bias="0.118" />
-
-        <TextView
-            android:id="@+id/neutered_text_input"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:fontFamily="@font/lato_regular"
-            android:text="Yes"
-            android:textColor="@color/broken_black"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/size_text_input"
-            app:layout_constraintVertical_bias="0.129" />
-
-        <TextView
-            android:id="@+id/not_like_text_input"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:fontFamily="@font/lato_regular"
-            android:text="Male"
-            android:textColor="@color/broken_black"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/neutered_text_input"
-            app:layout_constraintVertical_bias="0.169" />
+            app:layout_constraintVertical_bias="0.126" />
 
         <TextView
             android:id="@+id/be_here_for_text_input"
@@ -441,42 +385,63 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.145"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/not_like_text_input"
-            app:layout_constraintVertical_bias="0.22" />
+            app:layout_constraintVertical_bias="0.255" />
 
-        <ImageButton
-            android:id="@+id/lick_button"
-            android:layout_width="81dp"
-            android:layout_height="64dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="35dp"
-            android:background="@drawable/round_no_border_button"
-            android:scaleType="fitCenter"
+        <TextView
+            android:id="@+id/not_like_text_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/lato_regular"
+            android:text="Male"
+            android:textColor="@color/broken_black"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/lick" />
+            app:layout_constraintHorizontal_bias="0.151"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/neutered_text_input"
+            app:layout_constraintVertical_bias="0.187" />
 
-        <ImageButton
-            android:id="@+id/pee_button"
-            android:layout_width="81dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/round_no_border_button"
-            android:scaleType="fitCenter"
+        <TextView
+            android:id="@+id/neutered_text_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/lato_regular"
+            android:text="Yes"
+            android:textColor="@color/broken_black"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.143"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/size_text_input"
+            app:layout_constraintVertical_bias="0.145" />
+
+        <ImageView
+            android:id="@+id/match_profile_sex_image"
+            android:layout_width="65dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.107"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_bread_image"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/pee_on" />
+            app:srcCompat="@drawable/sex_choose" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="210dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
@@ -485,36 +450,17 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="616dp" />
 
-        <TextView
-            android:id="@+id/match_profile_pee_on_text"
+        <Button
+            android:id="@+id/start_to_massege_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/lato_light"
-            android:text="@string/pee"
-            android:textAllCaps="true"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/message_with"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.145"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pee_button"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/match_profile_lick_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/lato_light"
-            android:text="@string/lick"
-            android:textAllCaps="true"
-            android:textColor="@color/broken_black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.834"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lick_button"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

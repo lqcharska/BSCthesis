@@ -40,11 +40,6 @@ class MatchProfileFragment : Fragment() {
             )
         }
 
-        binding.peeButton.setOnClickListener {
-            findNavController().navigate(
-                MatchProfileFragmentDirections.actionMatchProfileToMatchMe()
-            )
-        }
 
         return binding.root
     }

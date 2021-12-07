@@ -25,6 +25,8 @@
     <string name="lick">Lick</string>
     <string name="message">Message</string>
     <string name="enter_mess">Enter HauHau</string>
+    <string name="save">Save</string>
+    <string name="message_with">Start to sniff with!</string>
 
     <string-array name="breads">
         <item>Mixed</item>

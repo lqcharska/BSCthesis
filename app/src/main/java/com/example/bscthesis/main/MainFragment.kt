@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -29,6 +30,9 @@ class MainFragment : Fragment() {
             false
         )
 
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+        }
+
         binding.mainMatchMeButton.setOnClickListener {
             findNavController().navigate(
                 MainFragmentDirections.actionMainToMatchMe()
@@ -38,6 +42,12 @@ class MainFragment : Fragment() {
         binding.mainMyMatchesButton.setOnClickListener {
             findNavController().navigate(
                 MainFragmentDirections.actionMainToMyMatches()
+            )
+        }
+
+        binding.mainMyProfileButton.setOnClickListener{
+            findNavController().navigate(
+                MainFragmentDirections.actionMainToMyProfile()
             )
         }
 

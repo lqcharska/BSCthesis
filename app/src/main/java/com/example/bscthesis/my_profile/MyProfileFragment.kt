@@ -1,30 +1,32 @@
-package com.example.bscthesis.describe_your_dog
+package com.example.bscthesis.my_profile
 
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.bscthesis.R
-import com.example.bscthesis.databinding.DescribeYourDogFragmentBinding
-import com.example.bscthesis.databinding.LoginFragmentBinding
-import com.example.bscthesis.registration.RegistrationFragmentDirections
+import com.example.bscthesis.databinding.MyProfileFragmentBinding
+import com.example.bscthesis.model.User
 import com.example.bscthesis.util.FirestoreUtil
 import com.example.bscthesis.util.StorageUtil
+import io.grpc.Context
 import java.io.ByteArrayOutputStream
 
-class DescribeYourDogFragment : Fragment() {
-    private lateinit var binding: DescribeYourDogFragmentBinding
+class MyProfileFragment: Fragment() {
+
+    private lateinit var binding: MyProfileFragmentBinding
+
     private val RC_SELECT_IMAGE = 2
     private lateinit var selectedImageBytes : ByteArray
     private var pictureChanged = false
@@ -77,17 +79,14 @@ class DescribeYourDogFragment : Fragment() {
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.describe_your_dog_fragment,
+            R.layout.my_profile_fragment,
             container,
             false
         )
 
-        val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-        }
-
         binding.progressBar.hide()
 
-        binding.describeYourDogAddPhoto.setOnClickListener{
+        binding.myProfileAddPhoto.setOnClickListener{
             val intent = Intent().apply {
                 type = "image/*"
                 action = Intent.ACTION_GET_CONTENT
@@ -96,15 +95,21 @@ class DescribeYourDogFragment : Fragment() {
             startActivityForResult(Intent.createChooser(intent, "Select image"), RC_SELECT_IMAGE)
         }
 
-        binding.describeYourDogRegisterButton.setOnClickListener {
+        binding.myProfileReturnButton.setOnClickListener{
+            findNavController().navigate(
+                MyProfileFragmentDirections.actionMyProfileToMain()
+            )
+        }
+
+        binding.myProfileSaveButton.setOnClickListener {
             //get information from text fields
-            val bread: String = binding.describeYourDogBreadField.editText?.text.toString()
-            val sex: String = binding.describeYourDogSexField.editText?.text.toString()
-            val age: String = binding.describeYourDogAgeField.editText?.text.toString()
-            val size: String = binding.describeYourDogSizeField.editText?.text.toString()
-            val neutered: String = binding.describeYourDogNeuteredField.editText?.text.toString()
-            val notLike: String = binding.describeYourDogNotLikeField.editText?.text.toString()
-            val beHereFor: String = binding.describeYourDogBeHereForField.editText?.text.toString()
+            val bread: String = binding.myProfileBreadField.editText?.text.toString()
+            val sex: String = binding.myProfileSexField.editText?.text.toString()
+            val age: String = binding.myProfileAgeField.editText?.text.toString()
+            val size: String = binding.myProfileSizeField.editText?.text.toString()
+            val neutered: String = binding.myProfileNeuteredField.editText?.text.toString()
+            val notLike: String = binding.myProfileNotLikeField.editText?.text.toString()
+            val beHereFor: String = binding.myProfileBeHereForField.editText?.text.toString()
 
             if (bread.isEmpty() || sex.isEmpty() || age.isEmpty() || size.isEmpty() || neutered.isEmpty() ||
                 notLike.isEmpty() || beHereFor.isEmpty()
@@ -138,10 +143,11 @@ class DescribeYourDogFragment : Fragment() {
                         null
                     )
                 }
-                findNavController().navigate(DescribeYourDogFragmentDirections.actionDescribeYourDogToMain())
+                findNavController().navigate(
+                    MyProfileFragmentDirections.actionMyProfileToMain()
+                )
             }
         }
-
         return binding.root
     }
 
@@ -156,10 +162,36 @@ class DescribeYourDogFragment : Fragment() {
 
             Glide.with(this)
                 .load(selectedImageBmp)
-                .circleCrop()
-                .into(binding.describeYourDogImageArea)
+                .into(binding.myProfileImageArea)
 
             pictureChanged = true
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        FirestoreUtil.getCurrentUser { user ->
+            if (this@MyProfileFragment.isVisible){
+                binding.myProfileText.text = user.name
+                binding.breadAutoTextView.setText(user.bread)
+                binding.sexAutoTextView.setText(user.sex)
+                binding.ageAutoTextView.setText(user.age)
+                binding.sizeAutoTextView.setText(user.size)
+                binding.neuteredAutoTextView.setText(user.neutered)
+                binding.notLikeAutoTextView.setText(user.notLike)
+                binding.beHereForAutoTextView.setText(user.beHereFor)
+                Log.d("picture_change",pictureChanged.toString())
+                Log.d("profile_picture",user.profilePicturePath.toString())
+                if (!pictureChanged && user.profilePicturePath != null){
+                    Glide.with(this)
+                        .load(StorageUtil.pathToReference(user.profilePicturePath))
+                        .placeholder(R.drawable.dog_profile_photo)
+                        .circleCrop()
+                        .into(binding.myProfileImageArea)
+
+                }
+
+            }
         }
     }
 }

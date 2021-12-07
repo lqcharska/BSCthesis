@@ -54,6 +54,9 @@
         <action
             android:id="@+id/action_main_to_my_matches"
             app:destination="@id/my_matches_destination" />
+        <action
+            android:id="@+id/action_main_to_my_profile"
+            app:destination="@id/my_profile_destination" />
     </fragment>
     <fragment
         android:id="@+id/match_me_destination"
@@ -81,5 +84,14 @@
         android:name="com.example.bscthesis.my_matches.MyMatchesFragment"
         android:label="my_matches_fragment"
         tools:layout="@layout/my_matches_fragment"/>
+    <fragment
+        android:id="@+id/my_profile_destination"
+        android:name="com.example.bscthesis.my_profile.MyProfileFragment"
+        android:label="my_profile_fragment"
+        tools:layout="@layout/my_profile_fragment">
+        <action
+            android:id="@+id/action_my_profile_to_main"
+            app:destination="@id/main_destination" />
+    </fragment>
 
 </navigation>
