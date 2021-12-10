@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">BScThesis</string>
-    <string name="welcome_text">Meet dogs and people with HAUtinder</string>
+    <string name="welcome_text">Make new dog friends with HauWeMet</string>
     <string name="register"> Register</string>
     <string name="login">Login</string>
     <string name="welcome_back">Welcome back!</string>
@@ -18,8 +18,8 @@
     <string name="neutered">Neutered?</string>
     <string name="not_like">Not like</string>
     <string name="be_here">Be here for</string>
-    <string name="match_me">Match me</string>
-    <string name="my_matches">My matches</string>
+    <string name="match_me">Find new friends</string>
+    <string name="my_matches">My friends</string>
     <string name="my_profile"> My profile</string>
     <string name="pee">Pee on</string>
     <string name="lick">Lick</string>
@@ -27,6 +27,9 @@
     <string name="enter_mess">Enter HauHau</string>
     <string name="save">Save</string>
     <string name="message_with">Start to sniff with!</string>
+    <string name="logout">Logout</string>
+    <string name="app_nickname">HauWeMet</string>
+    <string name="app_description">App for doggies, human allowed</string>
 
     <string-array name="breads">
         <item>Mixed</item>

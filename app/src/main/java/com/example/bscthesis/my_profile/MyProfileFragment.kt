@@ -20,6 +20,7 @@ import com.example.bscthesis.databinding.MyProfileFragmentBinding
 import com.example.bscthesis.model.User
 import com.example.bscthesis.util.FirestoreUtil
 import com.example.bscthesis.util.StorageUtil
+import com.google.firebase.auth.FirebaseAuth
 import io.grpc.Context
 import java.io.ByteArrayOutputStream
 
@@ -86,6 +87,9 @@ class MyProfileFragment: Fragment() {
 
         binding.progressBar.hide()
 
+        //Firebase authorization instance
+        var mAuth = FirebaseAuth.getInstance()
+
         binding.myProfileAddPhoto.setOnClickListener{
             val intent = Intent().apply {
                 type = "image/*"
@@ -94,6 +98,14 @@ class MyProfileFragment: Fragment() {
             }
             startActivityForResult(Intent.createChooser(intent, "Select image"), RC_SELECT_IMAGE)
         }
+
+        binding.myProfileLogoutButton.setOnClickListener {
+            mAuth.signOut()
+            findNavController().navigate(
+                MyProfileFragmentDirections.actionMyProfileToLogin()
+            )
+        }
+
 
         binding.myProfileReturnButton.setOnClickListener{
             findNavController().navigate(
@@ -143,9 +155,8 @@ class MyProfileFragment: Fragment() {
                         null
                     )
                 }
-                findNavController().navigate(
-                    MyProfileFragmentDirections.actionMyProfileToMain()
-                )
+                Toast.makeText(activity, "Saving", Toast.LENGTH_SHORT).show()
+                binding.progressBar.hide()
             }
         }
         return binding.root
@@ -162,6 +173,7 @@ class MyProfileFragment: Fragment() {
 
             Glide.with(this)
                 .load(selectedImageBmp)
+                .circleCrop()
                 .into(binding.myProfileImageArea)
 
             pictureChanged = true
@@ -170,18 +182,17 @@ class MyProfileFragment: Fragment() {
 
     override fun onStart() {
         super.onStart()
+
         FirestoreUtil.getCurrentUser { user ->
             if (this@MyProfileFragment.isVisible){
                 binding.myProfileText.text = user.name
-                binding.breadAutoTextView.setText(user.bread)
-                binding.sexAutoTextView.setText(user.sex)
-                binding.ageAutoTextView.setText(user.age)
-                binding.sizeAutoTextView.setText(user.size)
-                binding.neuteredAutoTextView.setText(user.neutered)
-                binding.notLikeAutoTextView.setText(user.notLike)
-                binding.beHereForAutoTextView.setText(user.beHereFor)
-                Log.d("picture_change",pictureChanged.toString())
-                Log.d("profile_picture",user.profilePicturePath.toString())
+                binding.breadAutoTextView.setText(user.bread, false)
+                binding.sexAutoTextView.setText(user.sex, false)
+                binding.ageAutoTextView.setText(user.age, false)
+                binding.sizeAutoTextView.setText(user.size, false)
+                binding.neuteredAutoTextView.setText(user.neutered, false)
+                binding.notLikeAutoTextView.setText(user.notLike, false)
+                binding.beHereForAutoTextView.setText(user.beHereFor, false)
                 if (!pictureChanged && user.profilePicturePath != null){
                     Glide.with(this)
                         .load(StorageUtil.pathToReference(user.profilePicturePath))

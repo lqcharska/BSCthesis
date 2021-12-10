@@ -37,6 +37,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/email"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/broken_black" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -115,6 +116,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/password"
+                android:inputType="textPassword"
                 android:textColor="@color/broken_black" />
         </com.google.android.material.textfield.TextInputLayout>
 
