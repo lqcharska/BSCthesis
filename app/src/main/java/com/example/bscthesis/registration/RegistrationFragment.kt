@@ -52,6 +52,7 @@ class RegistrationFragment : Fragment() {
                 // check if passwords are the same, if not make a toast
                 if (password != passwordConfirm){
                     Toast.makeText(activity, "Passwords are not the same", Toast.LENGTH_SHORT).show()
+                    binding.progressBar.hide()
                 } else {
                     binding.progressBar.show()
                     mAuth.createUserWithEmailAndPassword(emailAddress, password).addOnCompleteListener {

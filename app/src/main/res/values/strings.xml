@@ -30,6 +30,7 @@
     <string name="logout">Logout</string>
     <string name="app_nickname">HauWeMet</string>
     <string name="app_description">App for doggies, human allowed</string>
+    <string name="about">About</string>
 
     <string-array name="breads">
         <item>Mixed</item>

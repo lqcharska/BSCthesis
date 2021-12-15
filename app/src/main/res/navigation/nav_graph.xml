@@ -97,6 +97,9 @@
         <action
             android:id="@+id/action_match_profile_to_match_me"
             app:destination="@id/match_me_destination" />
+        <action
+            android:id="@+id/action_match_profile_to_message"
+            app:destination="@id/message_destination" />
     </fragment>
     <fragment
         android:id="@+id/my_matches_destination"
@@ -116,5 +119,10 @@
             app:destination="@id/login_destination"
             app:popUpTo="@id/get_started_destination" />
     </fragment>
+    <fragment
+        android:id="@+id/message_destination"
+        android:name="com.example.bscthesis.message.MessageFragment"
+        android:label="message_fragment"
+        tools:layout="@layout/message_fragment"/>
 
 </navigation>

@@ -106,13 +106,6 @@ class MyProfileFragment: Fragment() {
             )
         }
 
-
-        binding.myProfileReturnButton.setOnClickListener{
-            findNavController().navigate(
-                MyProfileFragmentDirections.actionMyProfileToMain()
-            )
-        }
-
         binding.myProfileSaveButton.setOnClickListener {
             //get information from text fields
             val bread: String = binding.myProfileBreadField.editText?.text.toString()
@@ -185,7 +178,7 @@ class MyProfileFragment: Fragment() {
 
         FirestoreUtil.getCurrentUser { user ->
             if (this@MyProfileFragment.isVisible){
-                binding.myProfileText.text = user.name
+                binding.topAppBar.title = user.name
                 binding.breadAutoTextView.setText(user.bread, false)
                 binding.sexAutoTextView.setText(user.sex, false)
                 binding.ageAutoTextView.setText(user.age, false)

@@ -25,8 +25,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_regular"
                 android:maxWidth="260dp"
+                android:minWidth="120dp"
                 android:paddingStart="8dp"
-                android:paddingTop="4dp"
+                android:paddingTop="8dp"
                 android:paddingEnd="8dp"
                 android:text="This is a Message"
                 android:textColor="@color/broken_black"
@@ -38,12 +39,15 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/message_text_input"
                 android:layout_alignEnd="@id/message_text_input"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/lato_regular"
-                android:text="June 10"
+                android:text="3/12/2021 3:00 PM"
                 android:textColor="#923D3D3D"
-                android:textSize="13sp" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
 
 
         </RelativeLayout>

@@ -15,14 +15,13 @@ class DogItem (val dog: User, val userId: String, private val context: Context) 
 
     override fun bind(binding: DogsItemBinding, position: Int) {
         binding.dogName.text = dog.name
-//        if (dog.profilePicturePath != null){
-//            GlideApp.with(context)
-//                .load(StorageUtil.pathToReference(dog.profilePicturePath))
-//                .placeholder(R.drawable.dog_profile_photo)
-//                .circleCrop()
-//                .into(binding.dogPhoto)
-//        }
-        Log.d("CIPA", dog.name)
+        if (dog.profilePicturePath != null){
+            GlideApp.with(context)
+                .load(StorageUtil.pathToReference(dog.profilePicturePath))
+                .placeholder(R.drawable.dog_profile_photo)
+                .circleCrop()
+                .into(binding.dogPhoto)
+        }
     }
 
     override fun getLayout(): Int {

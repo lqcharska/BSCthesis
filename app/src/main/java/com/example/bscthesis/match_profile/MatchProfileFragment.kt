@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.example.bscthesis.AppConstants
 import com.example.bscthesis.R
 import com.example.bscthesis.databinding.MatchProfileFragmentBinding
 import com.example.bscthesis.match_me.MatchMeFragmentDirections
+import com.example.bscthesis.util.StorageUtil
 
 class MatchProfileFragment : Fragment() {
 
@@ -28,18 +31,28 @@ class MatchProfileFragment : Fragment() {
             false
         )
 
-        binding.matchProfileReturnButton.setOnClickListener {
-            findNavController().navigate(
-                MatchProfileFragmentDirections.actionMatchProfileToMatchMe()
-            )
-        }
+        //set bar name
+        binding.topAppBar.title = "Sniff with" + " " + AppConstants.USER_NAME
 
-        binding.matchProfileReturnButton.setOnClickListener {
-            findNavController().navigate(
-                MatchProfileFragmentDirections.actionMatchProfileToMatchMe()
-            )
-        }
+        //set data
+        binding.dogNameText.text = AppConstants.USER_NAME
+        binding.ageTextInput.text = AppConstants.USER_AGE
+        binding.beHereForTextInput.text = AppConstants.USER_BE_HERE_FOR
+        binding.breadTextInput.text = AppConstants.USER_BREAD
+        binding.neuteredTextInput.text = AppConstants.USER_NEUTERED
+        binding.notLikeTextInput.text = AppConstants.USER_NOT_LIKE
+        binding.sizeTextInput.text = AppConstants.USER_SIZE
+        binding.sexTextInput.text = AppConstants.USER_SEX
 
+        Glide.with(this)
+            .load(StorageUtil.pathToReference(AppConstants.PROFILE_PICTURE_PATH))
+            .placeholder(R.drawable.dog_profile_photo)
+            .into(binding.messageProfileImageArea)
+
+        binding.startToMassegeButton.setOnClickListener {
+            findNavController().navigate(
+                MatchProfileFragmentDirections.actionMatchProfileToMessage())
+        }
 
         return binding.root
     }

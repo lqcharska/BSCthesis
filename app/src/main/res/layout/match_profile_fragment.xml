@@ -10,9 +10,8 @@
 
         <ImageView
             android:id="@+id/message_profile_image_area"
-            android:layout_width="290dp"
-            android:layout_height="190dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="396dp"
+            android:layout_height="208dp"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,58 +28,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/match_profile_toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/pink"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="?attr/actionBarTheme"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:titleMargin="1dp"
-                    app:titleTextColor="@color/broken_white"/>
-
-                <ImageButton
-                    android:id="@+id/match_profile_return_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:background="@android:color/transparent"
-                    android:scaleType="fitCenter"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/match_profile_toolbar"
-                    app:layout_constraintHorizontal_bias="0.016"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/return_arrow" />
-
-                <TextView
-                    android:id="@+id/match_profile_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/lato_regular"
-                    android:text="XYZ profile"
-                    android:textAllCaps="true"
-                    android:textColor="@color/broken_white"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/match_profile_toolbar"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/match_profile_return_button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.515" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/top_app_bar"
+                app:navigationIcon="@drawable/menu"
+                app:title="dog name"
+                app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -88,27 +44,27 @@
             android:id="@+id/match_profile_bread_image"
             android:layout_width="65dp"
             android:layout_height="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dog_name_text"
-            app:layout_constraintVertical_bias="0.002"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/bread" />
 
         <ImageView
             android:id="@+id/match_profile_age_image"
             android:layout_width="65dp"
             android:layout_height="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_sex_image"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_bread_image"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/dog_age" />
 
@@ -116,13 +72,13 @@
             android:id="@+id/match_profile_dog_size_image"
             android:layout_width="65dp"
             android:layout_height="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_age_image"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_sex_image"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/dog_size" />
 
@@ -130,13 +86,13 @@
             android:id="@+id/match_profile_neutered_image"
             android:layout_width="65dp"
             android:layout_height="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_dog_size_image"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_age_image"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/neutered" />
 
@@ -144,13 +100,13 @@
             android:id="@+id/match_profile_not_like_image"
             android:layout_width="65dp"
             android:layout_height="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_neutered_image"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_dog_size_image"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/not_like" />
 
@@ -158,13 +114,13 @@
             android:id="@+id/match_profiloe_be_here_for_image"
             android:layout_width="65dp"
             android:layout_height="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_not_like_image"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_neutered_image"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/be_here_for" />
 
@@ -188,260 +144,263 @@
             android:id="@+id/match_profile_bread_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="27dp"
             android:fontFamily="@font/lato_light"
             android:text="@string/bread"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/match_profile_bread_image"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dog_name_text"
-            app:layout_constraintVertical_bias="0.06" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/match_profile_sex_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="59dp"
             android:fontFamily="@font/lato_light"
             android:text="@string/sex"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/match_profile_sex_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/match_profile_sex_image"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_bread_text"
-            app:layout_constraintVertical_bias="0.002" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/match_profile_age_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="59dp"
             android:fontFamily="@font/lato_light"
             android:text="@string/age"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/match_profile_age_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/match_profile_age_image"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_sex_text"
-            app:layout_constraintVertical_bias="0.01" />
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_bread_text"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/match_profile_size_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="59dp"
             android:fontFamily="@font/lato_light"
             android:text="@string/size"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/match_profile_dog_size_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/match_profile_dog_size_image"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_age_text"
-            app:layout_constraintVertical_bias="0.004" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_sex_text"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/match_profile_neutered_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="60dp"
             android:fontFamily="@font/lato_light"
             android:text="@string/neutered"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@+id/match_profile_neutered_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/match_profile_neutered_image"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_size_text"
-            app:layout_constraintVertical_bias="0.019" />
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_age_text"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/match_profilenot_like_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="59dp"
             android:fontFamily="@font/lato_light"
             android:text="@string/not_like"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/match_profile_not_like_image"
-            app:layout_constraintTop_toBottomOf="@+id/match_profile_neutered_text"
-            app:layout_constraintVertical_bias="0.006" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_size_text"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/match_profile_be_here_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="33dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="56dp"
             android:fontFamily="@font/lato_light"
             android:text="@string/be_here"
             android:textAllCaps="true"
             android:textColor="@color/broken_black"
-            android:textSize="10sp"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/match_profiloe_be_here_for_image"
-            app:layout_constraintTop_toBottomOf="@+id/match_profilenot_like_text"
-            app:layout_constraintVertical_bias="0.027" />
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/match_profile_neutered_text"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/bread_text_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/lato_regular"
             android:text="Mixed"
             android:textAllCaps="false"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.186"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/match_profile_bread_image"
             app:layout_constraintTop_toBottomOf="@+id/dog_name_text"
-            app:layout_constraintVertical_bias="0.061" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/sex_text_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="55dp"
             android:fontFamily="@font/lato_regular"
             android:text="Male"
             android:textAllCaps="false"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.151"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/match_profile_sex_image"
             app:layout_constraintTop_toBottomOf="@+id/bread_text_input"
-            app:layout_constraintVertical_bias="0.089" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/age_text_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="55dp"
             android:fontFamily="@font/lato_regular"
             android:text="3 y.o."
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.151"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/sex_text_input"
-            app:layout_constraintVertical_bias="0.102" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/match_profile_age_image"
+            app:layout_constraintTop_toBottomOf="@+id/bread_text_input"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/size_text_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="53dp"
             android:fontFamily="@font/lato_regular"
             android:text="Medium"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.17"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/age_text_input"
-            app:layout_constraintVertical_bias="0.126" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/match_profile_dog_size_image"
+            app:layout_constraintTop_toBottomOf="@+id/sex_text_input"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/be_here_for_text_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="53dp"
             android:fontFamily="@font/lato_regular"
             android:text="Fun"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.145"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/not_like_text_input"
-            app:layout_constraintVertical_bias="0.255" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/match_profiloe_be_here_for_image"
+            app:layout_constraintTop_toBottomOf="@+id/neutered_text_input"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/not_like_text_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="54dp"
             android:fontFamily="@font/lato_regular"
             android:text="Male"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.151"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/neutered_text_input"
-            app:layout_constraintVertical_bias="0.187" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/match_profile_not_like_image"
+            app:layout_constraintTop_toBottomOf="@+id/size_text_input"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/neutered_text_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="53dp"
             android:fontFamily="@font/lato_regular"
             android:text="Yes"
             android:textColor="@color/broken_black"
-            android:textSize="12sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.143"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/size_text_input"
-            app:layout_constraintVertical_bias="0.145" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/match_profile_neutered_image"
+            app:layout_constraintTop_toBottomOf="@+id/age_text_input"
+            app:layout_constraintVertical_bias="0.003" />
 
         <ImageView
             android:id="@+id/match_profile_sex_image"
             android:layout_width="65dp"
             android:layout_height="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/match_profile_bread_image"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/sex_choose" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="210dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
@@ -461,6 +420,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="193dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
