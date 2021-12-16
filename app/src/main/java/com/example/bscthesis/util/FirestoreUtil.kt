@@ -2,6 +2,8 @@ package com.example.bscthesis.util
 
 import android.content.Context
 import android.util.Log
+import com.example.bscthesis.CurrentUserConstants
+import com.example.bscthesis.R
 import com.example.bscthesis.databinding.DogsItemBinding
 import com.example.bscthesis.databinding.TextMessageItemBinding
 import com.example.bscthesis.model.*
@@ -64,6 +66,40 @@ object FirestoreUtil {
         } }
     }
 
+    fun getCurrentUserContacts(context: Context, onListen: (List<BindableItem<DogsItemBinding>>) -> Unit): ListenerRegistration{
+        val listOfContacts = mutableListOf<String>()
+        firestoreInstance.collection("users").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection("engagedChatChannels")
+            .addSnapshotListener { value, error ->
+                value?.documents?.forEach {
+                    listOfContacts.add(it.id)
+                }
+            }
+            return firestoreInstance.collection("users").addSnapshotListener { value, error ->
+                val items = mutableListOf<BindableItem<DogsItemBinding>>()
+                value?.documents?.forEach {
+                    if (it.id in listOfContacts) {
+                        it.toObject(User::class.java)?.let { it1 -> DogItem(it1, it.id, context) }?.let { it2 ->
+                                items.add(it2)
+                            }
+                    }
+                }
+                onListen(items)
+            }
+
+    }
+
+    private fun doTheDoggiesLikeEachOther(otherDoggie: User): Boolean{
+        var areDoggieInLove = false
+        if (otherDoggie.sex == "Female"){
+            areDoggieInLove = !(CurrentUserConstants.USER_NOT_LIKE == "Female" || CurrentUserConstants.USER_NOT_LIKE == "Both")
+        }
+        if (otherDoggie.sex == "Male"){
+            areDoggieInLove = !(CurrentUserConstants.USER_NOT_LIKE == "Male" || CurrentUserConstants.USER_NOT_LIKE == "Both")
+        }
+
+        return areDoggieInLove
+    }
+
     fun addUsersListener(context: Context, onListen: (List<BindableItem<DogsItemBinding>>) -> Unit): ListenerRegistration{
         return firestoreInstance.collection("users")
             .addSnapshotListener{querySnapshot, firebaseFirestoreException ->
@@ -75,9 +111,9 @@ object FirestoreUtil {
                 querySnapshot?.documents?.forEach{
                     if (it.id != FirebaseAuth.getInstance().currentUser?.uid){
                         it.toObject(User::class.java)?.let { it1 -> DogItem(it1, it.id, context) }?.let { it2 ->
-                            items.add(
-                                it2
-                            )
+                            if (doTheDoggiesLikeEachOther(it2.dog)) {
+                                items.add(it2)
+                            }
                         }
                     }
 

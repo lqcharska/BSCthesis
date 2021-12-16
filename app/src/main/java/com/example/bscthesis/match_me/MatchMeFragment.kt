@@ -68,7 +68,6 @@ class MatchMeFragment : Fragment() {
                     dogSection = Section(items)
                     add(dogSection)
                     setOnItemClickListener(onClickItem)
-
                 }
             }
             shouldInitRecyclerView = false
@@ -97,6 +96,7 @@ class MatchMeFragment : Fragment() {
 
             findNavController().navigate(
                 MatchMeFragmentDirections.actionMatchMeToMatchProfile())
+            shouldInitRecyclerView = true
         }
     }
 }

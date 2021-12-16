@@ -15,6 +15,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.bscthesis.CurrentUserConstants
 import com.example.bscthesis.R
 import com.example.bscthesis.databinding.DescribeYourDogFragmentBinding
 import com.example.bscthesis.databinding.LoginFragmentBinding
@@ -112,6 +113,16 @@ class DescribeYourDogFragment : Fragment() {
                 Toast.makeText(activity, "Fill all data", Toast.LENGTH_SHORT).show()
             } else {
                 binding.progressBar.show()
+
+                //initialize CurrentUserConstants
+                CurrentUserConstants.USER_AGE = age
+                CurrentUserConstants.USER_BREAD = bread
+                CurrentUserConstants.USER_SEX = sex
+                CurrentUserConstants.USER_SIZE = size
+                CurrentUserConstants.USER_NEUTERED = neutered
+                CurrentUserConstants.USER_NOT_LIKE = notLike
+                CurrentUserConstants.USER_BE_HERE_FOR = beHereFor
+
                 if (::selectedImageBytes.isInitialized) {
                     StorageUtil.uploadProfilePhoto(selectedImageBytes)
                     { imagePath ->
@@ -125,6 +136,7 @@ class DescribeYourDogFragment : Fragment() {
                             beHereFor,
                             imagePath
                         )
+                        CurrentUserConstants.PROFILE_PICTURE_PATH = imagePath
                     }
                 } else {
                     FirestoreUtil.describeDoggie(
@@ -137,6 +149,7 @@ class DescribeYourDogFragment : Fragment() {
                         beHereFor,
                         null
                     )
+                    CurrentUserConstants.PROFILE_PICTURE_PATH = ""
                 }
                 findNavController().navigate(DescribeYourDogFragmentDirections.actionDescribeYourDogToMain())
             }

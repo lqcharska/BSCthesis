@@ -94,6 +94,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/name"
+                android:inputType="text"
                 android:textColor="@color/broken_black" />
         </com.google.android.material.textfield.TextInputLayout>
 

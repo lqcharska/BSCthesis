@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.bscthesis.CurrentUserConstants
 import com.example.bscthesis.R
 import com.example.bscthesis.databinding.RegistrationFragmentBinding
 import com.example.bscthesis.util.FirestoreUtil
@@ -60,6 +61,9 @@ class RegistrationFragment : Fragment() {
                             Toast.makeText(activity, it.exception?.message, Toast.LENGTH_LONG).show()
                         }
                         if(it.isSuccessful){
+                            //initialize CurrentUserConstants
+                            CurrentUserConstants.USER_NAME = dogName
+
                             FirestoreUtil.initCurrentUserIfItsFirstTime {
                                 FirestoreUtil.nameYourDoggie(dogName)
                                 findNavController().navigate(

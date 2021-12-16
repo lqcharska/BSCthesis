@@ -16,9 +16,9 @@
     <!--        app:showAsAction="ifRoom" />-->
 
         <item
-            android:id="@+id/more"
+            android:id="@+id/dog_profile"
             android:icon="@drawable/message_dog_profile"
-            android:title="@string/about"
+            android:title="dog_profile"
             android:contentDescription="Info about dog friend"
             app:showAsAction="ifRoom" />
 

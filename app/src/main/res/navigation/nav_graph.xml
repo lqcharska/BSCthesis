@@ -99,13 +99,18 @@
             app:destination="@id/match_me_destination" />
         <action
             android:id="@+id/action_match_profile_to_message"
-            app:destination="@id/message_destination" />
+            app:destination="@id/message_destination"
+            app:popUpTo="@id/match_me_destination" />
     </fragment>
     <fragment
         android:id="@+id/my_matches_destination"
         android:name="com.example.bscthesis.my_matches.MyMatchesFragment"
         android:label="my_matches_fragment"
-        tools:layout="@layout/my_matches_fragment"/>
+        tools:layout="@layout/my_matches_fragment">
+        <action
+            android:id="@+id/action_my_matches_to_message"
+            app:destination="@id/message_destination" />
+    </fragment>
     <fragment
         android:id="@+id/my_profile_destination"
         android:name="com.example.bscthesis.my_profile.MyProfileFragment"
@@ -123,6 +128,17 @@
         android:id="@+id/message_destination"
         android:name="com.example.bscthesis.message.MessageFragment"
         android:label="message_fragment"
-        tools:layout="@layout/message_fragment"/>
+        tools:layout="@layout/message_fragment">
+        <action
+            android:id="@+id/action_message_to_message_profile"
+            app:destination="@id/message_profile_destination"
+            app:popUpTo="@id/message_destination"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/message_profile_destination"
+        android:name="com.example.bscthesis.message_profile.MessageProfileFragment"
+        android:label="message_profile_fragment"
+        tools:layout="@layout/message_profile_fragment"/>
 
 </navigation>

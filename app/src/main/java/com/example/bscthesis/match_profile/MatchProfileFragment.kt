@@ -49,7 +49,7 @@ class MatchProfileFragment : Fragment() {
             .placeholder(R.drawable.dog_profile_photo)
             .into(binding.messageProfileImageArea)
 
-        binding.startToMassegeButton.setOnClickListener {
+        binding.startToMessageButton.setOnClickListener {
             findNavController().navigate(
                 MatchProfileFragmentDirections.actionMatchProfileToMessage())
         }
