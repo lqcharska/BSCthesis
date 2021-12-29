@@ -29,8 +29,7 @@
         tools:layout="@layout/get_started_fragment">
         <action
             android:id="@+id/action_get_started_to_login"
-            app:destination="@id/login_destination"
-            app:popUpTo="@id/get_started_destination" />
+            app:destination="@id/login_destination" />
         <action
             android:id="@+id/action_get_started_to_registration"
             app:destination="@id/registration_destination" />

@@ -169,7 +169,6 @@ class DescribeYourDogFragment : Fragment() {
 
             Glide.with(this)
                 .load(selectedImageBmp)
-                .circleCrop()
                 .into(binding.describeYourDogImageArea)
 
             pictureChanged = true

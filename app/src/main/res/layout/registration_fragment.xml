@@ -77,10 +77,14 @@
             android:textColor="@color/broken_black"
             android:textColorHint="@color/pink"
             app:boxStrokeColor="@color/pink"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+
+            app:counterTextColor="@color/broken_black"
+            app:endIconMode="clear_text"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
             app:hintTextColor="@color/pink"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -91,10 +95,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registration_name_text_input"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/name"
-                android:inputType="text"
+                android:inputType="textPersonName|text"
+                android:maxLength="15"
                 android:textColor="@color/broken_black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,12 +125,13 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registration_name_field"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintVertical_bias="0.0"
+            app:startIconDrawable="@android:drawable/sym_action_email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registration_email_text_input"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
@@ -156,12 +162,13 @@
             app:layout_constraintTop_toBottomOf="@+id/registration_email_field"
             app:layout_constraintVertical_bias="0.0"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/broken_black">
+            app:passwordToggleTint="@color/broken_black"
+            app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registration_password_text_input"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/password"
                 android:inputType="textPassword"
@@ -192,12 +199,13 @@
             app:layout_constraintTop_toBottomOf="@+id/registration_password_field"
             app:layout_constraintVertical_bias="0.0"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/broken_black">
+            app:passwordToggleTint="@color/broken_black"
+            app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registration_password_confirm_text_input"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_regular"
                 android:hint="@string/confirm_password"
                 android:inputType="textPassword"

@@ -5,9 +5,11 @@ import android.util.Log
 import com.example.bscthesis.CurrentUserConstants
 import com.example.bscthesis.R
 import com.example.bscthesis.databinding.DogsItemBinding
+import com.example.bscthesis.databinding.ImageMessageItemBinding
 import com.example.bscthesis.databinding.TextMessageItemBinding
 import com.example.bscthesis.model.*
 import com.example.bscthesis.recycleview.item.DogItem
+import com.example.bscthesis.recycleview.item.ImageMessageItem
 import com.example.bscthesis.recycleview.item.TextMessageItem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,7 +18,7 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.viewbinding.BindableItem
 import java.lang.NullPointerException
 
-object FirestoreUtil {
+object  FirestoreUtil {
     private val firestoreInstance: FirebaseFirestore by lazy {FirebaseFirestore.getInstance()}
 
     private val currentUserDocRef: DocumentReference
@@ -90,11 +92,32 @@ object FirestoreUtil {
 
     private fun doTheDoggiesLikeEachOther(otherDoggie: User): Boolean{
         var areDoggieInLove = false
-        if (otherDoggie.sex == "Female"){
-            areDoggieInLove = !(CurrentUserConstants.USER_NOT_LIKE == "Female" || CurrentUserConstants.USER_NOT_LIKE == "Both")
+        if (CurrentUserConstants.USER_SEX == "Female") {
+            if (otherDoggie.sex == "Female" && (otherDoggie.notLike == "None" || otherDoggie.notLike == "Male")) {
+                areDoggieInLove =
+                    !(CurrentUserConstants.USER_NOT_LIKE == "Female" || CurrentUserConstants.USER_NOT_LIKE == "Both")
+            }
+            if (otherDoggie.sex == "Male" && (otherDoggie.notLike == "None" || otherDoggie.notLike == "Male")) {
+                areDoggieInLove =
+                    !(CurrentUserConstants.USER_NOT_LIKE == "Male" || CurrentUserConstants.USER_NOT_LIKE == "Both")
+            }
+            if (CurrentUserConstants.USER_NOT_LIKE == "Both" && otherDoggie.beHereFor == "Bring help" && (otherDoggie.notLike == "None" || otherDoggie.notLike == "Male")) {
+                areDoggieInLove = true
+            }
         }
-        if (otherDoggie.sex == "Male"){
-            areDoggieInLove = !(CurrentUserConstants.USER_NOT_LIKE == "Male" || CurrentUserConstants.USER_NOT_LIKE == "Both")
+
+        if (CurrentUserConstants.USER_SEX == "Male") {
+            if (otherDoggie.sex == "Female" && (otherDoggie.notLike == "None" || otherDoggie.notLike == "Female")) {
+                areDoggieInLove =
+                    !(CurrentUserConstants.USER_NOT_LIKE == "Female" || CurrentUserConstants.USER_NOT_LIKE == "Both")
+            }
+            if (otherDoggie.sex == "Male" && (otherDoggie.notLike == "None" || otherDoggie.notLike == "Female")) {
+                areDoggieInLove =
+                    !(CurrentUserConstants.USER_NOT_LIKE == "Male" || CurrentUserConstants.USER_NOT_LIKE == "Both")
+            }
+            if (CurrentUserConstants.USER_NOT_LIKE == "Both" && otherDoggie.beHereFor == "Bring help" && (otherDoggie.notLike == "None" || otherDoggie.notLike == "Female")) {
+                areDoggieInLove = true
+            }
         }
 
         return areDoggieInLove
@@ -156,27 +179,41 @@ object FirestoreUtil {
                                 onListen: (List<BindableItem<TextMessageItemBinding>>) -> Unit): ListenerRegistration{
         return chatChannelCollectionRef.document(channelId).collection("messages")
             .orderBy("time")
-            .addSnapshotListener {querySnapshot, firebaseFirestoreException ->
-                if (firebaseFirestoreException != null){
+            .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                if (firebaseFirestoreException != null) {
                     Log.e("FIRESTORE", "ChatMessagesListener error", firebaseFirestoreException)
                     return@addSnapshotListener
                 }
 
                 val items = mutableListOf<BindableItem<TextMessageItemBinding>>()
-                querySnapshot?.documents?.forEach{
-                    if(it["type"] == MessageType.TEXT){
-                        it.toObject(TextMessage::class.java)?.let { it1 ->
-                            TextMessageItem(
-                                it1, context)
-                        }?.let { it2 -> items.add(it2) }
-                    } else {
-                        TODO("Add image message")
+                querySnapshot?.documents?.forEach {
+                    if (it["type"] == MessageType.TEXT) {
+                        items.add(TextMessageItem(it.toObject(TextMessage::class.java)!!, context))
                     }
+                    onListen(items)
                 }
-                onListen(items)
             }
-
     }
+
+//    fun addChatImageMessagesListener(channelId: String, context: Context,
+//                                    onListen: (List<BindableItem<ImageMessageItemBinding>>) -> Unit): ListenerRegistration{
+//        return chatChannelCollectionRef.document(channelId).collection("messages")
+//            .orderBy("time")
+//            .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+//                if (firebaseFirestoreException != null) {
+//                    Log.e("FIRESTORE", "ChatMessagesListener error", firebaseFirestoreException)
+//                    return@addSnapshotListener
+//                }
+//
+//                val items = mutableListOf<BindableItem<ImageMessageItemBinding>>()
+//                querySnapshot?.documents?.forEach {
+//                    if (it["type"] == MessageType.IMAGE) {
+//                        items.add(ImageMessageItem(it.toObject(ImageMessage::class.java)!!, context))
+//                    }
+//                    onListen(items)
+//                }
+//            }
+//    }
 
     fun sendMessage(message: Message, channelId: String){
         chatChannelCollectionRef.document(channelId)

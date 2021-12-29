@@ -179,7 +179,6 @@ class MyProfileFragment: Fragment() {
 
             Glide.with(this)
                 .load(selectedImageBmp)
-                .circleCrop()
                 .into(binding.myProfileImageArea)
 
             pictureChanged = true
@@ -191,7 +190,7 @@ class MyProfileFragment: Fragment() {
 
         FirestoreUtil.getCurrentUser { user ->
             if (this@MyProfileFragment.isVisible){
-                binding.topAppBar.title = user.name
+                binding.topAppBar.title = user.name.uppercase()
                 binding.breadAutoTextView.setText(user.bread, false)
                 binding.sexAutoTextView.setText(user.sex, false)
                 binding.ageAutoTextView.setText(user.age, false)
@@ -203,7 +202,6 @@ class MyProfileFragment: Fragment() {
                     Glide.with(this)
                         .load(StorageUtil.pathToReference(user.profilePicturePath))
                         .placeholder(R.drawable.dog_profile_photo)
-                        .circleCrop()
                         .into(binding.myProfileImageArea)
 
                 }

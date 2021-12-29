@@ -29,7 +29,7 @@ class MessageProfileFragment : Fragment() {
             )
 
             //set bar name
-            binding.topAppBar.title = AppConstants.USER_NAME
+            binding.topAppBar.title = AppConstants.USER_NAME.uppercase()
 
             //set data
             binding.dogNameText.text = AppConstants.USER_NAME

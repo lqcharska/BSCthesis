@@ -59,6 +59,7 @@ class RegistrationFragment : Fragment() {
                     mAuth.createUserWithEmailAndPassword(emailAddress, password).addOnCompleteListener {
                         if (!it.isSuccessful){
                             Toast.makeText(activity, it.exception?.message, Toast.LENGTH_LONG).show()
+                            binding.progressBar.hide()
                         }
                         if(it.isSuccessful){
                             //initialize CurrentUserConstants

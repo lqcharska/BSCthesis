@@ -32,10 +32,10 @@ class MatchProfileFragment : Fragment() {
         )
 
         //set bar name
-        binding.topAppBar.title = "Sniff with" + " " + AppConstants.USER_NAME
+        binding.topAppBar.title = "Sniff with" + " " + AppConstants.USER_NAME.uppercase()
 
         //set data
-        binding.dogNameText.text = AppConstants.USER_NAME
+        binding.dogNameText.text = AppConstants.USER_NAME.uppercase()
         binding.ageTextInput.text = AppConstants.USER_AGE
         binding.beHereForTextInput.text = AppConstants.USER_BE_HERE_FOR
         binding.breadTextInput.text = AppConstants.USER_BREAD

@@ -51,7 +51,7 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.845"
+            app:layout_constraintHorizontal_bias="0.83"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_my_matches_button"
             app:layout_constraintVertical_bias="0.0" />
@@ -67,7 +67,7 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.174"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_match_me_button"
             app:layout_constraintVertical_bias="0.0" />
@@ -77,15 +77,14 @@
             android:layout_width="135dp"
             android:layout_height="135dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
             android:background="@drawable/round_image_button"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_match_me_text"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/main_match_me_button"
+            app:layout_constraintVertical_bias="0.245"
             app:srcCompat="@drawable/my_profile" />
 
         <com.google.android.material.appbar.AppBarLayout

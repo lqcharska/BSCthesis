@@ -8,9 +8,11 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.bscthesis.CurrentUserConstants
 import com.example.bscthesis.R
 import com.example.bscthesis.databinding.LoginFragmentBinding
 import com.example.bscthesis.registration.RegistrationFragmentDirections
+import com.example.bscthesis.util.FirestoreUtil
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -47,7 +49,20 @@ class LoginFragment : Fragment() {
                     if (!it.isSuccessful){
                         Toast.makeText(activity, it.exception?.message, Toast.LENGTH_LONG).show()
                     }
+                    //initialize CurrentUserConstants
                     if (it.isSuccessful){
+                        FirestoreUtil.getCurrentUser { user ->
+                            CurrentUserConstants.USER_NOT_LIKE = user.notLike
+                            CurrentUserConstants.USER_NAME = user.name
+                            CurrentUserConstants.PROFILE_PICTURE_PATH =
+                                user.profilePicturePath.toString()
+                            CurrentUserConstants.USER_AGE = user.age
+                            CurrentUserConstants.USER_BREAD = user.bread
+                            CurrentUserConstants.USER_SEX = user.sex
+                            CurrentUserConstants.USER_NEUTERED = user.neutered
+                            CurrentUserConstants.USER_BE_HERE_FOR = user.beHereFor
+                            CurrentUserConstants.USER_SIZE = user.size
+                        }
                         findNavController().navigate(
                             LoginFragmentDirections.actionLoginToMain()
                         )

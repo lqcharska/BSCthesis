@@ -6,26 +6,33 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.example.bscthesis.R
+import com.example.bscthesis.databinding.ImageMessageItemBinding
 import com.example.bscthesis.databinding.TextMessageItemBinding
+import com.example.bscthesis.glide.GlideApp
+import com.example.bscthesis.model.ImageMessage
 import com.example.bscthesis.model.TextMessage
+import com.example.bscthesis.util.StorageUtil
 import com.google.firebase.auth.FirebaseAuth
 import com.xwray.groupie.Item
 import com.xwray.groupie.viewbinding.BindableItem
 import java.text.SimpleDateFormat
 
-class TextMessageItem(val message: TextMessage, val context: Context): BindableItem<TextMessageItemBinding>() {
-    override fun bind(binding: TextMessageItemBinding, position: Int) {
-        binding.messageTextInput.text = message.text
+class ImageMessageItem(val message: ImageMessage, val context: Context): BindableItem<ImageMessageItemBinding>() {
+    override fun bind(binding: ImageMessageItemBinding, position: Int) {
+        GlideApp.with(context)
+            .load(StorageUtil.pathToReference(message.imagePath))
+            .placeholder(R.drawable.send_image_message)
+            .into(binding.imageMessageImageView)
         setTimeText(binding)
         setMessageRootGravity(binding)
     }
 
     override fun getLayout(): Int {
-        return R.layout.text_message_item
+        return R.layout.image_message_item
     }
 
     override fun isSameAs(other: Item<*>): Boolean {
-        if (other !is TextMessageItem){
+        if (other !is ImageMessageItem){
             return false
         }
         if (this.message != other.message){
@@ -38,18 +45,18 @@ class TextMessageItem(val message: TextMessage, val context: Context): BindableI
         return isSameAs(other as TextMessageItem)
     }
 
-    override fun initializeViewBinding(view: View): TextMessageItemBinding {
-        return TextMessageItemBinding.bind(view)
+    override fun initializeViewBinding(view: View): ImageMessageItemBinding {
+        return ImageMessageItemBinding.bind(view)
     }
 
-    private fun setTimeText(binding: TextMessageItemBinding){
+    private fun setTimeText(binding: ImageMessageItemBinding){
         val dateFormat = SimpleDateFormat.
         getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.SHORT)
 
         binding.timestampText.text = dateFormat.format(message.time)
     }
 
-    private fun setMessageRootGravity(binding: TextMessageItemBinding){
+    private fun setMessageRootGravity(binding: ImageMessageItemBinding){
         if (message.senderId == FirebaseAuth.getInstance().currentUser?.uid){
             binding.relativeLayout.apply{
                 setBackgroundResource(R.drawable.rect_message_me_field)
@@ -71,5 +78,4 @@ class TextMessageItem(val message: TextMessage, val context: Context): BindableI
         result = 31 * result + context.hashCode()
         return result
     }
-
 }
